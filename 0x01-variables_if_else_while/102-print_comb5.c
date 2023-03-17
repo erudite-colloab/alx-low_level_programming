@@ -11,26 +11,27 @@
  */
 int main(void)
 {
-	int d, p;
+	int i, j;
 
-	for (d = '0'; d <= '9'; d++)
+	for (i = 0; i <= 98; i++)
 	{
-		for (p = d + 1; p <= '9'; p++)
+		for (j = i + 1; j <= 99; j++)
 		{
-			if (p != d)
-			{
-				putchar(d);
-				putchar(p);
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
 
-				if (d == '8' && p == '9')
-					continue;
+			if (i == 98 && j == 99)
+				continue;
 
-				putchar(',');
-				putchar(' ');
-			}
+			putchar(',');
+			putchar(' ');
 		}
 	}
-	putchar('\n');
 
+	putchar('\n');
+		
 	return (0);
 }
